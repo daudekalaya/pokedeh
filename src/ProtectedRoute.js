@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
   //Check URL params for password
-  const [searchParam, setSearchParam] = useSearchParams()
+  const [searchParam] = useSearchParams()
   if(searchParam.get("password") !== "secret") {
     return <Navigate to="/unauthorized" replace />;
   }
